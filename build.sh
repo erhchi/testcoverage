@@ -1,0 +1,2 @@
+cd testcoverage
+mvn test
