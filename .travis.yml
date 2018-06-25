@@ -1,4 +1,18 @@
 language: java
-jdk: oraclejdk8
 sudo: false
-script: ./build.sh
+install: true
+addons:
+  sonarcloud:
+    organization: "erhchi-github"
+    token:
+      secure: "8ced6779a218e1ba1a49c16e017c3e38ac9d6645"
+
+jdk: oraclejdk8
+
+#script: ./build.sh
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'

@@ -8,4 +8,8 @@ public class DummyClass {
     public int getValue(){
         return this.value;
     }
+
+//    public String FailTest(){
+//
+//    }
 }
